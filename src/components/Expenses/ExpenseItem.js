@@ -5,19 +5,21 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
-  let title = props.title;
+  const [title, setTitle] = useState(props.title);
+  let [amount, setAmount] = useState(props.amount);
 
-  function clickHandler() {
-    console.log(title);
-    title = "Updated!";
-  }
+  const clickHandler = () => {
+    
+    setAmount(amount += 10);
+    setTitle("Updated!!!")
+  };
 
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
+        <div className="expense-item__price">${amount}</div>
       </div>
       <button onClick={clickHandler}>Click</button>
     </Card>
