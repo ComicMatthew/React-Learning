@@ -9,9 +9,8 @@ function Expenses(props) {
   const [filteredYear, setfilteredYear] = useState('2020')
 
   const saveYearDataHandler = (enteredYear) => {
+    console.log(enteredYear)
     setfilteredYear(enteredYear)
-    console.log(filteredYear)
-    // return enteredYear
   }
 
   return (
