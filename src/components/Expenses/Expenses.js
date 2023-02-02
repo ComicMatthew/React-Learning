@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function Expenses(props) {
   const [filteredYear, setfilteredYear] = useState("2020");
@@ -39,14 +40,14 @@ function Expenses(props) {
           selected={filteredYear}
           onSaveYear={saveYearDataHandler}
         />
-         <ExpensesList items={filteredList} />
+        <ExpensesChart expenses={filteredList}/>
+        <ExpensesList items={filteredList} />
 
         {/* Trzy metody renderowania conditional. Inne wyfiltrowane.
 
         --------------------------------------------------------------------- */}
 
         {/* {expensesContent} */}
-
 
         {/* --------------------------------------------------------------------- */}
 
@@ -60,7 +61,6 @@ function Expenses(props) {
               date={expense.date}
             />
           ))} */}
-
 
         {/* ---------------------------------------------------------------------           */}
 
